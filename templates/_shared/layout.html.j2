@@ -52,6 +52,7 @@
 <footer class="site-footer">
   <div class="wrap foot-grid">
     <div class="foot-brand">
+      {% if s.logo %}<img class="foot-logo" src="{{ root }}media/{{ s.logo }}" alt="">{% endif %}
       <p class="brand-name">{{ s.name }}</p>
       {% if s.footer_text %}<p>{{ s.footer_text }}</p>{% endif %}
       {% if s.license %}<p class="fine">{{ ui.licence }} {{ s.license }}</p>{% endif %}

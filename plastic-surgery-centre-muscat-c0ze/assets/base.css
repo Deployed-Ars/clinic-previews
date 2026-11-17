@@ -226,3 +226,4 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{line-height:1.3}
   .actions{gap:8px;flex:none}
   .nav{inset:calc(var(--hy,41px) + 68px) 0 auto 0}
 }
+.foot-logo{height:72px;width:auto;display:block;margin-bottom:14px;border-radius:2px}
