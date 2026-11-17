@@ -33,7 +33,7 @@ Anything you can't confirm stays out (see CLAUDE.md rule 3).
 
 ## 3. Build
 
-**Preferred: the template pipeline.** Pick `dental`, `aesthetic` (dermatology/aesthetic) or `cosmetic-surgery`, then `python tools/build.py --new <slug> <template>`, fill `prospects/<slug>/site.json` with only the facts from step 2 (set `studio`), add images to `prospects/<slug>/assets/`, and run `python tools/build.py <slug> --publish`. It creates `<slug>-<4 chars>/` with the concept banner and noindex built in; read the build warnings (template default copy, hidden sections, missing images) and resolve them. Variables are in `templates/README.md`. Then continue at step 4. The manual steps below apply when editing `_template/` by hand.
+**Preferred: the template pipeline.** Use the skill for the clinic's type: `build-dental-demo`, `build-aesthetic-demo` (dermatology, laser, aesthetic) or `build-cosmetic-surgery-demo`. Each lists the facts to collect, how they map into `site.json`, which template defaults to replace or hide, and the checks. In short: `python tools/build.py --new <slug> <template>`, fill `prospects/<slug>/site.json` with only the facts from step 2 (set `studio`), add images to `prospects/<slug>/assets/`, and run `python tools/build.py <slug> --publish`. It creates `<slug>-<4 chars>/` with the concept banner and noindex built in; read the build warnings (template default copy, hidden sections, missing images) and resolve them. Variables are in `templates/README.md`. Then continue at step 4. The manual steps below apply when editing `_template/` by hand.
 
 1. Copy `_template/` to `<clinic-slug>-<4 random lowercase letters/digits>/`.
 2. In its `index.html`:
