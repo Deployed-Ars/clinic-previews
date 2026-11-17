@@ -42,7 +42,7 @@ em{font-style:italic}
 .nav a{opacity:.85;position:relative}
 .nav a:hover{opacity:1}
 .actions{display:flex;align-items:center;gap:14px}
-.tel{display:flex;align-items:center;gap:.4em;font-weight:600;font-size:.9rem}
+.tel{white-space:nowrap;display:flex;align-items:center;gap:.4em;font-weight:600;font-size:.9rem}
 .lang{font-size:.85rem;font-weight:600;border:1px solid var(--line);padding:.35em .9em;border-radius:999px}
 .burger{display:none;width:42px;height:42px;border:0;background:transparent;cursor:pointer;position:relative}
 .burger span{position:absolute;inset-inline:10px;height:2px;background:currentColor;transition:transform .25s,top .25s}
