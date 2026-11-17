@@ -16,7 +16,7 @@
 ] %}
 
 {% block main %}
-<section class="hero" id="top">
+<section class="hero{% if s.hero_style == 'light' %} hero-light{% endif %}" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">{{ s.eyebrow }}</p>
