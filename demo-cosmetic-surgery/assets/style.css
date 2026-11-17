@@ -1,0 +1,117 @@
+/* COSMETIC SURGERY: discreet, dark luxe, gold accent, tabs, generous space. */
+:root{--r-card:2px;--card:#fff}
+body{font-weight:400}
+h1,h2,h3{font-weight:500;letter-spacing:-.01em}
+h1 em,h2 em,.intro-text em{font-style:italic;color:var(--accent-deep)}
+.sec.cream{background:var(--bg-alt)}
+.sec.slim{padding:50px 0}
+.center{text-align:center}
+.narrow{max-width:880px}
+.btn{border-radius:2px;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem;font-weight:600;padding:1.2em 2.2em}
+[dir=rtl] .btn{letter-spacing:0}
+.btn-accent{color:#1d1a21}
+.btn-ghost{color:#fff;border-color:#ffffff55}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* header over dark hero */
+.site-header{color:#fff}
+.site-header .lang{border-color:#ffffff44}
+.site-header[data-scrolled],.site-header[data-open]{background:#241f2af2;backdrop-filter:blur(10px);box-shadow:0 1px 0 #ffffff18}
+.site-header[data-open] .nav{background:var(--night);color:#fff}
+.brand-name{font-weight:500;letter-spacing:.04em;font-size:1.25rem}
+.nav{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+[dir=rtl] .nav{letter-spacing:0;text-transform:none}
+@media(max-width:980px){.nav{background:var(--night);color:#fff}.nav a{border-color:#ffffff1f}}
+.btn-sm{background:var(--accent);color:#1d1a21;padding:.9em 1.4em}
+.btn-sm:hover{background:var(--accent-deep)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;padding:130px 0 80px;color:#fff;overflow:hidden;background:
+  radial-gradient(900px 700px at 85% 20%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%),
+  linear-gradient(160deg,var(--night-2),var(--night) 70%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,90px);align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{min-height:0}}
+.eyebrow{color:var(--accent-deep)}
+.hero .eyebrow,.night .eyebrow{color:var(--accent)}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.6rem);line-height:1.04;font-weight:400;margin:12px 0 24px}
+.hero h1 em{color:var(--accent)}
+.hero-text{font-size:1.12rem;color:#ffffffb8;max-width:48ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 30px}
+.assure{display:grid;gap:10px;font-size:.92rem;color:#ffffffc8}
+.assure li{display:flex;gap:12px;align-items:center}
+.assure .ic{color:var(--accent);width:1.1em}
+.hero-art{position:relative;padding:0 0 28px 28px}
+[dir=rtl] .hero-art{padding:0 28px 28px 0}
+.frame{position:relative}
+.frame::before{content:"";position:absolute;inset:26px -26px -26px 26px;border:1px solid var(--accent);opacity:.7;z-index:0}
+[dir=rtl] .frame::before{inset:26px 26px -26px -26px}
+.frame-img,.frame .ph{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover}
+.frame .ph{background:linear-gradient(165deg,color-mix(in srgb,var(--accent) 55%,var(--night)),var(--night-2))}
+.frame .ph .ic{color:var(--accent);opacity:.7}
+.badge{position:absolute;z-index:2;inset-inline-start:0;bottom:0;background:#fff;color:var(--ink);padding:16px 22px;display:grid;gap:2px;box-shadow:0 20px 40px -10px #0006}
+.badge b{font-family:var(--font-display);font-size:2rem;line-height:1}
+.badge span{font-size:.78rem;color:var(--muted)}
+
+/* intro */
+.intro-text{font-family:var(--font-display);font-size:clamp(1.8rem,3.8vw,2.8rem);line-height:1.3;text-align:center;margin-bottom:54px}
+.stats-row{justify-content:center;gap:24px 90px}
+.stats-row .stat{text-align:center;align-items:center}
+.stat-num,.stat-suffix{color:var(--accent-deep);font-weight:500}
+.offer{background:var(--accent);color:#1d1a21;padding:14px 0}
+.offer-in{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;align-items:center;font-weight:500}
+.offer .tag{text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:700}
+
+/* procedures */
+.tab{border-radius:2px;letter-spacing:.08em;text-transform:uppercase;font-size:.76rem;padding:.9em 1.8em}
+.tab[aria-selected=true]{background:var(--night);color:#fff;border-color:var(--night)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.proc{display:flex;flex-direction:column;gap:10px;padding:34px 30px;background:var(--bg);transition:background .3s}
+.proc:hover{background:var(--night);color:#fff}
+.proc-n{font-family:var(--font-display);font-style:italic;color:var(--accent-deep);font-size:1.1rem}
+.proc h3{font-size:1.55rem}
+.proc p{color:var(--muted);font-size:.95rem;flex:1}
+.proc:hover p{color:#ffffffa8}
+.proc-go{display:inline-flex;gap:8px;align-items:center;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--accent-deep);margin-top:10px}
+.proc:hover .proc-go{color:var(--accent)}
+[dir=rtl] .proc-go{letter-spacing:0}[dir=rtl] .proc-go .ic{transform:scaleX(-1)}
+
+/* journey rail */
+.journey-rail{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0}
+.journey-rail .jstep{padding:30px 26px 0;border-inline-start:1px solid var(--line);position:relative}
+.journey-rail .jstep:first-child{border-inline-start:0;padding-inline-start:0}
+.journey-rail .jnum{color:var(--accent-deep);font-style:italic;font-weight:400}
+
+/* dark sections */
+.night{background:var(--night);color:#fff}
+.night h2{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:400}
+.night h2 em{color:var(--accent)}
+.night .lead,.night .sec-head .lead{color:#ffffffaa}
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+@media(max-width:860px){.safety-grid{grid-template-columns:1fr}}
+.safety .lead,.safety-grid .lead{margin-top:18px;color:#ffffffaa;max-width:48ch}
+.safety-points{display:grid;gap:0}
+.safety-points li{display:flex;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid #ffffff22}
+.safety-points .ic{color:var(--accent);width:1.5em;height:1.5em}
+.night .form{background:#ffffff0d;border-color:#ffffff22;color:#fff}
+.night .form input,.night .form select,.night .form textarea{background:#ffffff10;border-color:#ffffff22;color:#fff;border-radius:2px}
+.night .form select option{color:#111}
+.night .fine{color:#ffffff88}
+.night .loc-row .ic{color:var(--accent)}
+.night .hours dt{color:#ffffff88}
+.night .link-arrow{color:var(--accent)}
+.night .btn-primary{background:var(--accent);color:#1d1a21}
+.night .btn-primary:hover{background:#fff}
+
+/* surgeons */
+.docs-luxe .doc-photo img,.docs-luxe .doc-photo .ph{border-radius:0;aspect-ratio:3/4}
+.docs-luxe .ph-person{background:linear-gradient(160deg,var(--night-2),var(--night));aspect-ratio:3/4}
+.docs-luxe .ph-person span{color:var(--accent)}
+.docs-luxe .doc h3{font-size:1.6rem}
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
+.pills li{padding:.6em 1.4em;border:1px solid var(--line);font-size:.88rem;letter-spacing:.04em}
+.review{border-radius:2px}
+.review blockquote{font-family:var(--font-display);font-size:1.2rem;line-height:1.5}
+.ba-stage{border-radius:2px}
+.form{border-radius:2px}
+.form input,.form select,.form textarea{border-radius:2px}
+.faq-item summary{font-family:var(--font-display);font-size:1.3rem;font-weight:500}
