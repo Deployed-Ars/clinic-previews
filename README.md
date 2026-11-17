@@ -15,6 +15,16 @@ Private website concepts for outreach. Not indexed by search engines.
 5. The preview is live in about a minute at:
    `https://<your-username>.github.io/clinic-previews/bright-smile-dental-7f3k/`
 
+## Templates (faster route)
+
+Three variable-driven templates for dental, aesthetic/dermatology and cosmetic surgery clinics (English + Arabic). Previews with placeholder content:
+
+- `demo-dental/`
+- `demo-aesthetic/`
+- `demo-cosmetic-surgery/`
+
+Build one for a clinic with `python tools/build.py --new <slug> <template>`, edit `prospects/<slug>/site.json`, then `python tools/build.py <slug> --publish`. Full variable list and rules: `templates/README.md`. Needs `pip install jinja2`.
+
 ## Remove a clinic
 
 Delete its folder. The link stops working within a minute or two.

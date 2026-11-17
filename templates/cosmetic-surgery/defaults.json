@@ -1,0 +1,85 @@
+{
+  "colors": {"primary": "#241f2a", "accent": "#c9a46a", "ink": "#1d1a21", "bg": "#f7f3ed"},
+  "fonts": {
+    "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap",
+    "display": "'Playfair Display',Georgia,serif",
+    "body": "'DM Sans',system-ui,sans-serif"
+  },
+  "meta_title": {"en": "{name} | Cosmetic & plastic surgery in {city}", "ar": "{name} | جراحة التجميل في {city}"},
+  "meta_description": {
+    "en": "{name} provides surgical and non-surgical cosmetic procedures in {city}, with private consultations, clear information and personal aftercare.",
+    "ar": "تقدّم {name} إجراءات التجميل الجراحية وغير الجراحية في {city} مع استشارات خاصة ومعلومات واضحة ومتابعة شخصية."
+  },
+  "eyebrow": {"en": "Cosmetic & plastic surgery · {city}", "ar": "جراحة التجميل والترميم · {city}"},
+  "hero_title": {"en": "Refined results. *Natural* confidence.", "ar": "نتائج راقية. وثقة *طبيعية*."},
+  "hero_text": {
+    "en": "Thoughtful cosmetic surgery in {city}, planned around your face, your body and your goals, with discretion at every step.",
+    "ar": "جراحة تجميل مدروسة في {city}، مخطّطة وفق وجهك وجسمك وأهدافك، مع الخصوصية في كل خطوة."
+  },
+  "assurances": {
+    "en": ["Private, no-pressure consultations", "Clear information on risks and recovery", "Personal aftercare and follow-up"],
+    "ar": ["استشارات خاصة دون ضغط", "معلومات واضحة عن المخاطر والتعافي", "متابعة ورعاية بعد العملية"]
+  },
+  "intro_eyebrow": {"en": "Our approach", "ar": "نهجنا"},
+  "intro": {
+    "en": "Great surgery is *restraint*. We plan carefully, explain honestly and aim for results that look like you.",
+    "ar": "الجراحة المتقنة هي *الاعتدال*. نخطّط بعناية ونشرح بصدق ونسعى لنتائج تشبهك."
+  },
+  "procedures_eyebrow": {"en": "Procedures", "ar": "الإجراءات"},
+  "procedures_title": {"en": "Surgical and *non-surgical* options", "ar": "خيارات *جراحية* وغير جراحية"},
+  "procedures": [
+    {"name": {"en": "Face", "ar": "الوجه"}, "treatments": [
+      {"title": {"en": "Rhinoplasty", "ar": "تجميل الأنف"}, "text": {"en": "Refine shape and balance while respecting your features and breathing.", "ar": "تحسين الشكل والتوازن مع احترام ملامحك والتنفس."}},
+      {"title": {"en": "Facelift & neck lift", "ar": "شد الوجه والرقبة"}, "text": {"en": "Restore a rested, natural contour with subtle lifting techniques.", "ar": "استعادة مظهر مرتاح وطبيعي بتقنيات شدّ دقيقة."}},
+      {"title": {"en": "Eyelid surgery", "ar": "جراحة الجفون"}, "text": {"en": "Freshen the eyes by addressing heaviness and puffiness.", "ar": "إنعاش العينين بمعالجة الترهل والانتفاخ."}},
+      {"title": {"en": "Ear correction", "ar": "تجميل الأذن"}, "text": {"en": "Reposition prominent ears for adults and children.", "ar": "إعادة وضع الأذن البارزة للكبار والأطفال."}}
+    ]},
+    {"name": {"en": "Breast", "ar": "الثدي"}, "treatments": [
+      {"title": {"en": "Breast augmentation", "ar": "تكبير الثدي"}, "text": {"en": "Add volume and shape, with implant choice guided by your frame.", "ar": "إضافة حجم وشكل مع اختيار الحشوة وفق بنية جسمك."}},
+      {"title": {"en": "Breast lift", "ar": "شد الثدي"}, "text": {"en": "Elevate and reshape for a firmer, more youthful profile.", "ar": "رفع وإعادة تشكيل لمظهر أكثر شدًا وشبابًا."}},
+      {"title": {"en": "Breast reduction", "ar": "تصغير الثدي"}, "text": {"en": "Relieve weight and discomfort with a balanced result.", "ar": "تخفيف الثقل والانزعاج بنتيجة متوازنة."}}
+    ]},
+    {"name": {"en": "Body", "ar": "الجسم"}, "treatments": [
+      {"title": {"en": "Liposuction", "ar": "شفط الدهون"}, "text": {"en": "Sculpt stubborn areas with precise, contour-focused techniques.", "ar": "نحت المناطق العنيدة بتقنيات دقيقة تركز على الانسيابية."}},
+      {"title": {"en": "Tummy tuck", "ar": "شد البطن"}, "text": {"en": "Tighten the abdominal wall and remove excess skin.", "ar": "شد جدار البطن وإزالة الجلد الزائد."}},
+      {"title": {"en": "Body contouring", "ar": "نحت الجسم"}, "text": {"en": "Combined plans for lifting and shaping after weight change.", "ar": "خطط مدمجة للشد والتشكيل بعد تغيّر الوزن."}}
+    ]},
+    {"name": {"en": "Non-surgical", "ar": "غير جراحي"}, "treatments": [
+      {"title": {"en": "Botulinum toxin", "ar": "البوتوكس"}, "text": {"en": "Soften lines while keeping natural expression.", "ar": "تخفيف التجاعيد مع الحفاظ على التعابير الطبيعية."}},
+      {"title": {"en": "Dermal fillers", "ar": "الفيلر"}, "text": {"en": "Restore volume and refine contours without surgery.", "ar": "استعادة الحجم وتحسين الملامح دون جراحة."}},
+      {"title": {"en": "Thread lift", "ar": "شد بالخيوط"}, "text": {"en": "A gentle lift with little downtime.", "ar": "شدّ لطيف بفترة تعافٍ قصيرة."}}
+    ]}
+  ],
+  "journey_eyebrow": {"en": "Your journey", "ar": "رحلتك"},
+  "journey_title": {"en": "From first conversation to *full recovery*", "ar": "من أول حديث إلى *التعافي الكامل*"},
+  "journey": [
+    {"title": {"en": "Private consultation", "ar": "استشارة خاصة"}, "text": {"en": "Meet your surgeon, share your goals and ask every question.", "ar": "التقِ بجراحك وشاركه أهدافك واطرح كل أسئلتك."}},
+    {"title": {"en": "Planning", "ar": "التخطيط"}, "text": {"en": "A personal plan covering technique, timing, cost and recovery.", "ar": "خطة شخصية تشمل التقنية والتوقيت والتكلفة والتعافي."}},
+    {"title": {"en": "Pre-operative care", "ar": "الإعداد قبل العملية"}, "text": {"en": "Health checks and clear preparation instructions.", "ar": "فحوصات صحية وتعليمات تحضير واضحة."}},
+    {"title": {"en": "Surgery", "ar": "العملية"}, "text": {"en": "Carefully performed with attentive anaesthesia and nursing care.", "ar": "تُجرى بعناية مع تخدير ورعاية تمريضية منتبهة."}},
+    {"title": {"en": "Recovery & follow-up", "ar": "التعافي والمتابعة"}, "text": {"en": "Scheduled reviews and direct contact as you heal.", "ar": "مراجعات مجدولة وتواصل مباشر أثناء تعافيك."}}
+  ],
+  "safety_eyebrow": {"en": "Safety & standards", "ar": "السلامة والمعايير"},
+  "safety": {
+    "title": {"en": "Your safety comes *first*", "ar": "سلامتك *أولًا*"},
+    "text": {"en": "Every plan begins with a careful health assessment and an honest conversation about risks, benefits and alternatives.", "ar": "تبدأ كل خطة بتقييم صحي دقيق وحديث صريح عن المخاطر والفوائد والبدائل."},
+    "points": {"en": ["Thorough pre-operative assessment", "Procedures in licensed facilities", "Qualified anaesthesia and nursing team", "Follow-up visits and a direct line for questions"], "ar": ["تقييم شامل قبل العملية", "إجراءات في منشآت مرخّصة", "فريق تخدير وتمريض مؤهّل", "زيارات متابعة وخط مباشر للاستفسار"]}
+  },
+  "doctors_eyebrow": {"en": "Surgeons", "ar": "الجراحون"},
+  "doctors_title": {"en": "The *surgeons* behind your care", "ar": "*الجراحون* المسؤولون عن رعايتك"},
+  "results_eyebrow": {"en": "Results", "ar": "النتائج"},
+  "results_title": {"en": "Subtle, natural *outcomes*", "ar": "*نتائج* هادئة وطبيعية"},
+  "financing_title": {"en": "Payment options", "ar": "خيارات الدفع"},
+  "reviews_eyebrow": {"en": "Patient voices", "ar": "آراء المرضى"},
+  "reviews_title": {"en": "In their *own words*", "ar": "*بكلماتهم* هم"},
+  "faq_title": {"en": "Your questions, *answered*", "ar": "أسئلتكم، *بإجاباتها*"},
+  "faqs": [
+    {"q": {"en": "What happens at the first consultation?", "ar": "ماذا يحدث في الاستشارة الأولى؟"}, "a": {"en": "You meet your surgeon privately, discuss your goals and medical history, and receive honest advice about options, risks and recovery. There is no obligation.", "ar": "تلتقي بجراحك على انفراد وتناقش أهدافك وتاريخك الصحي وتتلقى نصيحة صادقة حول الخيارات والمخاطر والتعافي دون أي التزام."}},
+    {"q": {"en": "How long is recovery?", "ar": "كم تستغرق فترة التعافي؟"}, "a": {"en": "It varies by procedure. We give you a realistic timeline for time off work, activity and when to expect final results.", "ar": "تختلف حسب الإجراء. نقدّم لك جدولًا واقعيًا للانقطاع عن العمل والنشاط وموعد ظهور النتيجة النهائية."}},
+    {"q": {"en": "Will my results look natural?", "ar": "هل ستبدو نتائجي طبيعية؟"}, "a": {"en": "That is our aim. We plan conservatively around your proportions and discuss what is realistic for you.", "ar": "هذا هدفنا. نخطّط بتحفّظ وفق تناسق ملامحك ونناقش ما هو واقعي لك."}},
+    {"q": {"en": "Is my privacy protected?", "ar": "هل خصوصيتي محمية؟"}, "a": {"en": "Yes. Consultations are private and your information and photos are handled confidentially.", "ar": "نعم. الاستشارات خاصة ويُتعامل مع معلوماتك وصورك بسرية."}},
+    {"q": {"en": "Can I discuss payment options?", "ar": "هل يمكن مناقشة خيارات الدفع؟"}, "a": {"en": "Of course. We provide a clear written estimate and can talk through the options available.", "ar": "بالتأكيد. نقدّم تقديرًا مكتوبًا واضحًا ويمكننا مناقشة الخيارات المتاحة."}}
+  ],
+  "contact_eyebrow": {"en": "Private consultation", "ar": "استشارة خاصة"},
+  "contact_title": {"en": "Let's talk about *your goals*", "ar": "لنتحدث عن *أهدافك*"}
+}

@@ -1,0 +1,33 @@
+{
+  "template": "dental",
+  "languages": ["en"],
+  "name": "",
+  "city": "",
+  "country": "",
+  "tagline": "",
+  "colors": {"primary": "", "accent": ""},
+  "logo": "",
+  "images": {"hero": "", "about": "", "tech": ""},
+  "contact": {
+    "phone": "",
+    "whatsapp": "",
+    "email": "",
+    "address": "",
+    "hours": [{"days": "Sat - Thu", "time": "9:00 - 21:00"}],
+    "maps_url": ""
+  },
+  "social": {"instagram": "", "facebook": "", "tiktok": ""},
+  "license": "",
+  "rating": null,
+  "review_count": null,
+  "stats": [],
+  "services": [],
+  "doctors": [],
+  "reviews": [],
+  "before_after": [],
+  "faqs": [],
+  "branches": [],
+  "offer": {"text": "", "until": ""},
+  "hide": [],
+  "preview_note": ""
+}

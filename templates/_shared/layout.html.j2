@@ -1,0 +1,106 @@
+{% import 'parts.j2' as p with context %}
+{% set c = s.contact or {} %}
+{% set wa_num = (c.whatsapp or c.phone or '')|digits %}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}" data-template="{{ tpl }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ s.meta_title or s.name }}</title>
+<meta name="description" content="{{ s.meta_description }}">
+<meta name="theme-color" content="{{ cv['primary'] }}">
+<meta property="og:title" content="{{ s.meta_title or s.name }}">
+<meta property="og:description" content="{{ s.meta_description }}">
+{% if alt %}<link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.href }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ s.fonts.url }}">
+{% if lang == 'ar' %}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap">{% endif %}
+<style>:root{ {% for k, v in cv.items() %}--{{ k }}:{{ v }};{% endfor %}--font-display:{{ s.fonts.display|safe }};--font-body:{{ s.fonts.body|safe }}; }</style>
+<link rel="stylesheet" href="{{ root }}assets/base.css">
+<link rel="stylesheet" href="{{ root }}assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{{ ld }}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept-banner">{% if s.banner %}{{ s.banner }}{% else %}<strong>{{ ui.concept_lead }}</strong> {{ ui.concept_text }}{% endif %}</div>
+
+<header class="site-header" data-header>
+  <div class="wrap bar">
+    <a class="brand" href="{{ root or './' }}" aria-label="{{ s.name }}">
+      {% if s.logo %}<img class="brand-logo" src="{{ root }}media/{{ s.logo }}" alt="">{% endif %}
+      <span class="brand-name">{{ s.name }}</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      {% for it in nav if it[2] and it[0] not in hide %}<a href="#{{ it[0] }}">{{ it[1] }}</a>{% endfor %}
+    </nav>
+    <div class="actions">
+      {% if c.phone %}<a class="tel" href="tel:{{ c.phone|digits }}" dir="ltr">{{ p.icon('phone') }}<span>{{ c.phone }}</span></a>{% endif %}
+      {% if alt %}<a class="lang" href="{{ alt.href }}" hreflang="{{ alt.lang }}" lang="{{ alt.lang }}">{{ ui.other_lang }}</a>{% endif %}
+      <a class="btn btn-primary btn-sm" href="#contact">{{ ui.book_consult if tpl == 'cosmetic-surgery' else ui.book }}</a>
+      <button class="burger" type="button" aria-label="{{ ui.menu }}" aria-expanded="false" aria-controls="nav" data-burger><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <p class="brand-name">{{ s.name }}</p>
+      {% if s.footer_text %}<p>{{ s.footer_text }}</p>{% endif %}
+      {% if s.license %}<p class="fine">{{ ui.licence }} {{ s.license }}</p>{% endif %}
+    </div>
+    <div>
+      <p class="foot-h">{{ ui.quick_links }}</p>
+      <ul>{% for it in nav if it[2] and it[0] not in hide %}<li><a href="#{{ it[0] }}">{{ it[1] }}</a></li>{% endfor %}</ul>
+    </div>
+    <div>
+      <p class="foot-h">{{ ui.nav_contact }}</p>
+      <ul>
+        {% if c.phone %}<li><a href="tel:{{ c.phone|digits }}" dir="ltr">{{ c.phone }}</a></li>{% endif %}
+        {% if c.email %}<li><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>{% endif %}
+        {% if c.address %}<li>{{ c.address }}</li>{% endif %}
+      </ul>
+      {% if s.social %}
+      <p class="foot-h">{{ ui.follow }}</p>
+      <ul class="social">{% for k, v in s.social.items() if v %}<li><a href="{{ v }}" target="_blank" rel="noopener">{{ k|capitalize }}</a></li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© {{ s.name }}. {{ ui.rights }}</span>
+    {% if s.preview_note %}<span class="preview-note">{{ s.preview_note }}</span>{% endif %}
+  </div>
+</footer>
+
+{# Concept demos never link to the clinic's real WhatsApp: buttons go to #contact unless site.json sets "live": true #}
+{% set live = s.live and wa_num %}
+{% if live or not s.live %}
+<div class="wa" data-wa>
+  <div class="wa-pop" id="wa-pop" hidden>
+    <div class="wa-head"><b>{{ s.name }}</b><span>{{ ui.wa_status }}</span></div>
+    <div class="wa-body">
+      <p class="wa-bubble">{{ ui.wa_hello }}</p>
+      {% if live %}
+      <a class="wa-quick" href="{{ wa_num|wa(ui.wa_msg_book) }}" target="_blank" rel="noopener">{{ ui.wa_book }}</a>
+      <a class="wa-quick" href="{{ wa_num|wa(ui.wa_msg_prices) }}" target="_blank" rel="noopener">{{ ui.wa_prices }}</a>
+      <a class="wa-open" href="{{ wa_num|wa(ui.wa_msg_general) }}" target="_blank" rel="noopener">{{ p.icon('chat') }} {{ ui.wa_open }}</a>
+      {% else %}
+      <a class="wa-quick" href="#contact">{{ ui.wa_book }}</a>
+      <a class="wa-quick" href="#contact">{{ ui.wa_prices }}</a>
+      <a class="wa-open" href="#contact">{{ p.icon('chat') }} {{ ui.wa_open }}</a>
+      {% endif %}
+    </div>
+  </div>
+  <button class="wa-btn" type="button" aria-label="WhatsApp" aria-expanded="false" aria-controls="wa-pop" data-wa-toggle>{{ p.icon('chat') }}</button>
+</div>
+{% endif %}
+<script src="{{ root }}assets/app.js" defer></script>
+</body>
+</html>

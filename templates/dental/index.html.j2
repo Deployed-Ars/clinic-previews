@@ -1,0 +1,163 @@
+{% extends 'layout.html.j2' %}
+{% import 'parts.j2' as p with context %}
+{% set c = s.contact or {} %}
+{% set nav = [
+  ('services', ui.nav_services, s.services),
+  ('why', ui.nav_about, s.why),
+  ('journey', ui.nav_journey, s.journey),
+  ('results', ui.nav_results, s.before_after),
+  ('doctors', ui.nav_doctors, s.doctors),
+  ('reviews', ui.nav_reviews, s.reviews),
+  ('faq', ui.nav_faq, s.faqs),
+  ('contact', ui.nav_contact, true)
+] %}
+
+{% block main %}
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ s.eyebrow }}</p>
+      <h1>{{ s.hero_title|accent }}</h1>
+      <p class="hero-text">{{ s.hero_text }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-accent" href="#contact">{{ ui.book }}</a>
+        {% if c.phone %}<a class="btn btn-ghost" href="tel:{{ c.phone|digits }}" dir="ltr">{{ p.icon('phone') }} {{ c.phone }}</a>{% endif %}
+      </div>
+      <ul class="chips">
+        {% for h in s.highlights %}<li>{{ p.icon('check') }}{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="hero-art">
+      {{ p.photo(s.images.hero if s.images else '', s.name, 'hero-img', 'tooth') }}
+      {% if s.rating %}
+      <div class="float float-a">
+        {{ p.stars(s.rating) }}
+        <b>{{ s.rating }}</b>
+        <span>{% if s.review_count %}{{ s.review_count }} {{ ui.reviews_word }} · {% endif %}{{ ui.rating_on_google }}</span>
+      </div>
+      {% endif %}
+      {% if s.license %}<div class="float float-b">{{ p.icon('shield') }}<span>{{ ui.licence }}<br><b>{{ s.license }}</b></span></div>{% endif %}
+    </div>
+  </div>
+</section>
+
+{% if s.stats %}
+<section class="stats-band"><div class="wrap">{{ p.stats(s.stats) }}</div></section>
+{% endif %}
+
+{% if s.offer and s.offer.text %}
+<section class="offer"><div class="wrap offer-in">
+  <span class="tag">{{ ui.offer_label }}</span><p>{{ s.offer.text }}</p>
+  {% if s.offer.until %}<small>{{ ui.valid_until }} {{ s.offer.until }}</small>{% endif %}
+  <a class="btn btn-accent btn-sm" href="#contact">{{ ui.book }}</a>
+</div></section>
+{% endif %}
+
+{% if s.services and 'services' not in hide %}
+<section class="sec" id="services">
+  <div class="wrap">
+    {{ p.section_head(s.services_eyebrow, s.services_title, '', 'center') }}
+    <div class="svc-grid">
+      {% for sv in s.services %}
+      <article class="svc reveal">
+        <span class="svc-ic">{{ p.icon(sv.icon or 'tooth') }}</span>
+        <h3>{{ sv.title }}</h3>
+        <p>{{ sv.text }}</p>
+        {% if sv.price_from %}<p class="svc-price">{{ ui['from'] }} <b>{{ sv.price_from }}</b></p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.why and 'why' not in hide %}
+<section class="sec alt" id="why">
+  <div class="wrap why-grid">
+    <div class="why-art reveal">{{ p.photo(s.images.about if s.images else '', s.name, 'why-img', 'smile') }}</div>
+    <div>
+      {{ p.section_head(s.why_eyebrow, s.why_title) }}
+      <ul class="why-list">
+        {% for w in s.why %}
+        <li class="reveal"><span class="svc-ic sm">{{ p.icon(w.icon or 'check') }}</span><div><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.journey and 'journey' not in hide %}
+<section class="sec" id="journey">
+  <div class="wrap">
+    {{ p.section_head(s.journey_eyebrow, s.journey_title, '', 'center') }}
+    {{ p.journey(s.journey, 'journey-dental') }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.before_after and 'results' not in hide %}
+<section class="sec alt" id="results">
+  <div class="wrap">
+    {{ p.section_head(s.results_eyebrow, s.results_title, '', 'center') }}
+    {{ p.slider(s.before_after) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.tech and 'tech' not in hide %}
+<section class="sec tech" id="technology">
+  <div class="wrap tech-grid">
+    <div>
+      <p class="eyebrow">{{ s.tech_eyebrow }}</p>
+      <h2>{{ s.tech.title|accent }}</h2>
+      <p class="lead">{{ s.tech.text }}</p>
+    </div>
+    <ul class="tech-points">
+      {% for pt in s.tech.points %}<li class="reveal">{{ p.icon('check') }}{{ pt }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{% if s.doctors and 'doctors' not in hide %}
+<section class="sec" id="doctors">
+  <div class="wrap">
+    {{ p.section_head(s.doctors_eyebrow, s.doctors_title) }}
+    {{ p.doctors(s.doctors) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.insurance and 'insurance' not in hide %}
+<section class="sec slim alt"><div class="wrap">
+  <p class="eyebrow center">{{ ui.insurance_title }}</p>
+  <ul class="pills">{% for i in s.insurance %}<li>{{ i }}</li>{% endfor %}</ul>
+</div></section>
+{% endif %}
+
+{% if s.reviews and 'reviews' not in hide %}
+<section class="sec" id="reviews">
+  <div class="wrap">
+    {{ p.section_head(s.reviews_eyebrow, s.reviews_title) }}
+    {{ p.reviews(s.reviews) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.faqs and 'faq' not in hide %}
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    {{ p.section_head('', s.faq_title, '', 'center') }}
+    {{ p.faq(s.faqs) }}
+  </div>
+</section>
+{% endif %}
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    {{ p.section_head(s.contact_eyebrow, s.contact_title) }}
+    {{ p.contact() }}
+  </div>
+</section>
+{% endblock %}

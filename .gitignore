@@ -1,2 +1,7 @@
 screens/
 .DS_Store
+# local working data: leads, intake, screenshots, design notes, build scratch
+prospects/
+references/
+.preview/
+__pycache__/

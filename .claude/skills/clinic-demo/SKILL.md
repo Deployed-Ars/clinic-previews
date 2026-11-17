@@ -33,6 +33,8 @@ Anything you can't confirm stays out (see CLAUDE.md rule 3).
 
 ## 3. Build
 
+**Preferred: the template pipeline.** Pick `dental`, `aesthetic` (dermatology/aesthetic) or `cosmetic-surgery`, then `python tools/build.py --new <slug> <template>`, fill `prospects/<slug>/site.json` with only the facts from step 2 (set `studio`), add images to `prospects/<slug>/assets/`, and run `python tools/build.py <slug> --publish`. It creates `<slug>-<4 chars>/` with the concept banner and noindex built in; read the build warnings (template default copy, hidden sections, missing images) and resolve them. Variables are in `templates/README.md`. Then continue at step 4. The manual steps below apply when editing `_template/` by hand.
+
 1. Copy `_template/` to `<clinic-slug>-<4 random lowercase letters/digits>/`.
 2. In its `index.html`:
    - Set `--brand`, `--brand-dark`, `--brand-soft` at the top of the `<style>`. Check text on `--brand` buttons stays readable (4.5:1 contrast).
@@ -51,7 +53,7 @@ Render with Playwright at 390×844 (phone) and 1280×900 (desktop). Look at both
 ## 5. Publish
 
 Commit only that clinic's folder: `Add demo: <Clinic Name>`. Push to `main`. Live link:
-`https://arshadhax.github.io/clinic-previews/<folder>/`
+`https://deployed-ars.github.io/clinic-previews/<folder>/`
 
 Wait about a minute, then confirm the link loads (HTTP 200).
 

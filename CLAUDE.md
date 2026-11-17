@@ -2,13 +2,17 @@
 
 This repo hosts **website concept demos** for cold outreach to dental, cosmetic surgery and aesthetic/dermatology clinics. Each clinic gets a free one-page demo of a modern website in its own branding. The demo link goes in a personalised cold email, followed up on WhatsApp.
 
-Live site: `https://arshadhax.github.io/clinic-previews/<clinic-folder>/` (GitHub Pages, `main` branch, root). A push to `main` goes live in about a minute.
+Live site: `https://deployed-ars.github.io/clinic-previews/<clinic-folder>/` (GitHub Pages, `main` branch, root). A push to `main` goes live in about a minute.
 
 To make a demo, follow the `clinic-demo` skill in `.claude/skills/clinic-demo/SKILL.md`.
 
 ## Repo layout
 
-- `_template/index.html` — the base demo. Copy it for every new clinic; never edit a clinic's demo into the template.
+- `_template/index.html` — the original one-file base demo. Copy it for every new clinic; never edit a clinic's demo into the template.
+- `templates/` — the three variable-driven templates (`dental`, `aesthetic`, `cosmetic-surgery`) plus shared parts. Rendered by `python tools/build.py <slug> --publish`; see `templates/README.md`. The build adds the concept banner and noindex automatically. Change a template only when the change should apply to every clinic of that type.
+- `demo-dental/`, `demo-aesthetic/`, `demo-cosmetic-surgery/` — live previews of the three templates with placeholder content only (no real clinic).
+- `tools/` — `build.py` (templates to static site), `prospect.py` (intake: colours, Google details).
+- `prospects/` and `references/` — local working data (intake, screenshots, per-clinic `site.json`, design notes). Gitignored; never commit them.
 - `<clinic-slug>-<4 random chars>/` — one folder per clinic, e.g. `bright-smile-dental-7f3k/`. The random suffix stops people guessing other clinics' links.
 - `index.html`, `robots.txt`, `.nojekyll` — keep the site out of search engines and make GitHub publish folders starting with `_`. Don't remove them.
 - `screens/` — email screenshots. Gitignored; never commit it.

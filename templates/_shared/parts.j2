@@ -1,0 +1,189 @@
+{# Shared macros. Import with:  {% import 'parts.j2' as p with context %} #}
+{% set ICONS = {
+ 'tooth': '<path d="M12 6c-1.6-1.4-3.6-2-5.2-1.2C4.6 5.9 4.3 9 5.2 11.6c.7 2 1.5 3.4 1.7 5.9.2 2.3.8 3.1 1.7 3.1 1.6 0 1.3-3.4 3.4-3.4s1.8 3.4 3.4 3.4c.9 0 1.5-.8 1.7-3.1.2-2.5 1-3.9 1.7-5.9.9-2.6.6-5.7-1.6-6.8-1.6-.8-3.6-.2-5.2 1.2z"/>',
+ 'sparkle': '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',
+ 'shield': '<path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+ 'heart': '<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',
+ 'smile': '<circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.4 2.2 4 2.2s3-.7 4-2.2M9 9.5h.01M15 9.5h.01"/>',
+ 'clock': '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ 'star': '<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z"/>',
+ 'check': '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+ 'phone': '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
+ 'pin': '<path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+ 'mail': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+ 'arrow': '<path d="M5 12h14M13 6l6 6-6 6"/>',
+ 'face': '<path d="M12 3c-4 0-6.5 3-6.5 7 0 2 .5 3.5 1.5 5 .8 1.2 1 2.5 1 4h8c0-1.5.2-2.8 1-4 1-1.5 1.5-3 1.5-5 0-4-2.5-7-6.5-7z"/><path d="M9.5 10h.01M14.5 10h.01M10 14c.6.5 1.2.7 2 .7s1.4-.2 2-.7"/>',
+ 'drop': '<path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/>',
+ 'leaf': '<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19c2-5 5-8 9-10"/>',
+ 'zap': '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+ 'calendar': '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+ 'user': '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/>',
+ 'award': '<circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 21l5-3 5 3-1.5-7"/>',
+ 'alert': '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/>',
+ 'layers': '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+ 'camera': '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+ 'chat': '<path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3z"/>',
+ 'baby': '<circle cx="12" cy="12" r="9"/><path d="M12 3c-1 1.5-.5 3 1 3M9 14c1 1.2 2 1.7 3 1.7s2-.5 3-1.7M9 10h.01M15 10h.01"/>',
+ 'scan': '<path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3M4 12h16"/>',
+ 'hand': '<path d="M8 12V6a1.5 1.5 0 013 0v5m0-6a1.5 1.5 0 013 0v6m0-5a1.5 1.5 0 013 0v7a6 6 0 01-6 6h-1a6 6 0 01-5-3l-2-3a1.5 1.5 0 012.3-1.8L8 14"/>',
+ 'body': '<circle cx="12" cy="5" r="2"/><path d="M7 9h10M12 9v6M9 21l3-6 3 6"/>',
+ 'bubble': '<circle cx="9" cy="14" r="5"/><circle cx="17" cy="8" r="3"/>'
+} %}
+
+{% macro icon(name, cls='') -%}
+<svg class="ic {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ (ICONS.get(name) or ICONS['sparkle'])|safe }}</svg>
+{%- endmacro %}
+
+{# image with placeholder fallback #}
+{% macro photo(path, alt='', cls='', kind='sparkle') -%}
+{% if path -%}
+<img class="{{ cls }}" src="{{ root }}media/{{ path }}" alt="{{ alt }}" loading="lazy">
+{%- else -%}
+<div class="ph {{ cls }}" role="img" aria-label="{{ alt }}">{{ icon(kind) }}</div>
+{%- endif %}
+{%- endmacro %}
+
+{% macro initials(name) -%}
+{%- set parts = (name or '').replace('Dr.', '').replace('Dr', '').split() -%}
+{{ ((parts[0][:1] if parts else '') ~ (parts[-1][:1] if parts|length > 1 else ''))|upper }}
+{%- endmacro %}
+
+{% macro section_head(eyebrow, title, lead='', cls='') -%}
+<div class="sec-head reveal {{ cls }}">
+  {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+  <h2>{{ title|accent }}</h2>
+  {% if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro stats(items, cls='') -%}
+<ul class="stats {{ cls }}">
+  {% for it in items %}
+  <li class="stat reveal">
+    <span class="stat-top"><b class="stat-num" {% if it.value is number %}data-count="{{ it.value }}"{% endif %}>{{ it.value }}</b>{% if it.suffix %}<span class="stat-suffix">{{ it.suffix }}</span>{% endif %}</span>
+    <span class="stat-label">{{ it.label }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro faq(items) -%}
+<div class="faq">
+  {% for it in items %}
+  <details class="faq-item reveal" {% if loop.first %}open{% endif %}>
+    <summary>{{ it.q }}<span class="faq-plus" aria-hidden="true"></span></summary>
+    <div class="faq-a"><p>{{ it.a }}</p></div>
+  </details>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro stars(n) -%}
+<span class="stars" role="img" aria-label="{{ n }} / 5">{% for i in range(5) %}<span class="{{ 'on' if i < (n or 5)|round(0, 'floor') else '' }}">★</span>{% endfor %}</span>
+{%- endmacro %}
+
+{% macro reviews(items) -%}
+<div class="carousel" data-carousel>
+  <div class="car-track" tabindex="0">
+    {% for r in items %}
+    <figure class="review reveal">
+      {{ stars(r.rating) }}
+      <blockquote>{{ r.text }}</blockquote>
+      <figcaption><b>{{ r.name }}</b>{% if r.source %}<span>{{ r.source }}</span>{% endif %}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  <div class="car-nav">
+    <button type="button" data-prev aria-label="{{ ui.prev }}">{{ icon('arrow') }}</button>
+    <button type="button" data-next aria-label="{{ ui.next }}">{{ icon('arrow') }}</button>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro doctors(items, cls='') -%}
+<div class="docs {{ cls }}">
+  {% for d in items %}
+  <article class="doc reveal">
+    <div class="doc-photo">
+      {% if d.photo %}<img src="{{ root }}media/{{ d.photo }}" alt="{{ d.name }}" loading="lazy">{% else %}<div class="ph ph-person"><span>{{ initials(d.name) }}</span></div>{% endif %}
+    </div>
+    <div class="doc-body">
+      <h3>{{ d.name }}</h3>
+      {% if d.title %}<p class="doc-title">{{ d.title }}</p>{% endif %}
+      {% if d.credentials %}<p class="doc-cred">{{ d.credentials }}</p>{% endif %}
+      {% if d.bio %}<p class="doc-bio">{{ d.bio }}</p>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro journey(items, cls='') -%}
+<ol class="journey {{ cls }}">
+  {% for st in items %}
+  <li class="jstep reveal">
+    <span class="jnum">{{ '%02d' % loop.index }}</span>
+    <h3>{{ st.title }}</h3>
+    <p>{{ st.text }}</p>
+  </li>
+  {% endfor %}
+</ol>
+{%- endmacro %}
+
+{# before/after comparison slider #}
+{% macro slider(items) -%}
+<div class="ba-wrap">
+  {% for it in items %}
+  <figure class="ba reveal" data-ba style="--pos:50%">
+    <div class="ba-stage">
+      <div class="ba-layer ba-after">{{ photo(it.after, ui.after ~ ' ' ~ (it.label or ''), 'ba-img', 'sparkle') }}</div>
+      <div class="ba-layer ba-before">{{ photo(it.before, ui.before ~ ' ' ~ (it.label or ''), 'ba-img', 'layers') }}</div>
+      <span class="ba-tag ba-tag-b">{{ ui.before }}</span><span class="ba-tag ba-tag-a">{{ ui.after }}</span>
+      <span class="ba-handle" aria-hidden="true"></span>
+      <input type="range" min="0" max="100" value="50" aria-label="{{ ui.drag }}">
+    </div>
+    <figcaption>{% if it.label %}<b>{{ it.label }}</b> · {% endif %}{{ ui.drag }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+<p class="fine">{{ ui.results_note }}</p>
+{%- endmacro %}
+
+{% macro hours(h) -%}
+{% if h is string %}<p>{{ h }}</p>{% elif h %}
+<dl class="hours">{% for r in h %}<div><dt>{{ r.days }}</dt><dd>{{ r.time }}</dd></div>{% endfor %}</dl>{% endif %}
+{%- endmacro %}
+
+{# contact block: info + request form. variant classes handled in CSS #}
+{% macro contact(opts=none) -%}
+{% set c = s.contact or {} %}
+{% set wa = c.whatsapp or c.phone %}
+<div class="contact-grid">
+  <div class="contact-info reveal">
+    {% set locs = s.branches or [{'name': '', 'address': c.address, 'phone': c.phone, 'hours': c.hours, 'maps_url': c.maps_url}] %}
+    {% for b in locs %}
+    <div class="loc">
+      {% if b.name %}<h3>{{ b.name }}</h3>{% endif %}
+      {% if b.address %}<p class="loc-row">{{ icon('pin') }}<span>{{ b.address }}</span></p>{% endif %}
+      {% if b.phone %}<p class="loc-row">{{ icon('phone') }}<a href="tel:{{ b.phone|digits }}" dir="ltr">{{ b.phone }}</a></p>{% endif %}
+      {% if b.hours %}<div class="loc-row">{{ icon('clock') }}<div>{{ hours(b.hours) }}</div></div>{% endif %}
+      {% if b.maps_url %}<a class="link-arrow" href="{{ b.maps_url }}" target="_blank" rel="noopener">{{ ui.directions }} {{ icon('arrow') }}</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% if c.email %}<p class="loc-row">{{ icon('mail') }}<a href="mailto:{{ c.email }}">{{ c.email }}</a></p>{% endif %}
+  </div>
+  <form class="form reveal" data-wa-form="{{ wa|digits }}" data-msg="{{ ui.form_msg }}" data-live="{{ 'true' if (s.live and wa) else 'false' }}" data-demo-note="{{ ui.demo_form_note }}">
+    <h3>{{ ui.form_title }}</h3>
+    <label><span>{{ ui.form_name }}</span><input name="n" required autocomplete="name"></label>
+    <label><span>{{ ui.form_phone }}</span><input name="p" type="tel" required autocomplete="tel" dir="ltr"></label>
+    {% if s.services %}
+    <label><span>{{ ui.form_service }}</span>
+      <select name="s"><option value="">{{ ui.form_choose }}</option>{% for sv in s.services %}<option>{{ sv.title }}</option>{% endfor %}</select>
+    </label>
+    {% endif %}
+    <label><span>{{ ui.form_message }}</span><textarea name="m" rows="3"></textarea></label>
+    <button class="btn btn-primary" type="submit">{{ icon('chat') }} {{ ui.form_send if (s.live and wa) else ui.form_send_demo }}</button>
+    <p class="fine form-status" role="status">{{ ui.form_note }}</p>
+  </form>
+</div>
+{%- endmacro %}

@@ -1,0 +1,160 @@
+{% extends 'layout.html.j2' %}
+{% import 'parts.j2' as p with context %}
+{% set c = s.contact or {} %}
+{% set nav = [
+  ('services', ui.nav_services, s.services),
+  ('journey', ui.nav_journey, s.journey),
+  ('technology', ui.nav_technology, s.tech),
+  ('results', ui.nav_results, s.before_after),
+  ('doctors', ui.nav_doctors, s.doctors),
+  ('reviews', ui.nav_reviews, s.reviews),
+  ('faq', ui.nav_faq, s.faqs),
+  ('contact', ui.nav_contact, true)
+] %}
+
+{% block main %}
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ s.eyebrow }}</p>
+      <h1>{{ s.hero_title|accent }}</h1>
+      <p class="hero-text">{{ s.hero_text }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">{{ ui.book_consult }}</a>
+        <a class="link-arrow" href="#services">{{ s.hero_secondary }} {{ p.icon('arrow') }}</a>
+      </div>
+      {% if s.rating or s.license %}
+      <div class="hero-meta">
+        {% if s.rating %}<span>{{ p.stars(s.rating) }} <b>{{ s.rating }}</b>{% if s.review_count %} · {{ s.review_count }} {{ ui.reviews_word }}{% endif %}</span>{% endif %}
+        {% if s.license %}<span>{{ ui.licence }} {{ s.license }}</span>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="hero-art">
+      <div class="arch">{{ p.photo(s.images.hero if s.images else '', s.name, 'arch-img', 'sparkle') }}</div>
+      <div class="orb" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+{% if s.ticker %}
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  {% for _ in range(2) %}{% for t in s.ticker %}<span>{{ t }}</span><i>✦</i>{% endfor %}{% endfor %}
+</div></div>
+{% endif %}
+
+<section class="sec intro">
+  <div class="wrap narrow">
+    <p class="eyebrow center">{{ s.intro_eyebrow }}</p>
+    <p class="intro-text reveal">{{ s.intro|accent }}</p>
+    {% if s.stats %}{{ p.stats(s.stats, 'stats-row') }}{% endif %}
+  </div>
+</section>
+
+{% if s.offer and s.offer.text %}
+<section class="offer"><div class="wrap offer-in">
+  <span class="tag">{{ ui.offer_label }}</span><p>{{ s.offer.text }}</p>
+  {% if s.offer.until %}<small>{{ ui.valid_until }} {{ s.offer.until }}</small>{% endif %}
+  <a class="link-arrow" href="#contact">{{ ui.book }} {{ p.icon('arrow') }}</a>
+</div></section>
+{% endif %}
+
+{% if s.services and 'services' not in hide %}
+<section class="sec" id="services">
+  <div class="wrap">
+    {{ p.section_head(s.services_eyebrow, s.services_title) }}
+    <ol class="svc-list">
+      {% for sv in s.services %}
+      <li class="reveal">
+        <a href="#contact" class="svc-row">
+          <span class="svc-n">{{ '%02d' % loop.index }}</span>
+          <span class="svc-t"><h3>{{ sv.title }}</h3></span>
+          <span class="svc-d">{{ sv.text }}{% if sv.price_from %} <b class="svc-price">{{ ui['from'] }} {{ sv.price_from }}</b>{% endif %}</span>
+          <span class="svc-go">{{ p.icon('arrow') }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+{% if s.journey and 'journey' not in hide %}
+<section class="sec tint" id="journey">
+  <div class="wrap">
+    {{ p.section_head(s.journey_eyebrow, s.journey_title, '', 'center') }}
+    {{ p.journey(s.journey, 'journey-line') }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.tech and 'technology' not in hide %}
+<section class="sec dark" id="technology">
+  <div class="wrap tech-grid">
+    <div class="tech-art reveal">{{ p.photo(s.images.tech if s.images else '', '', 'tech-img', 'zap') }}</div>
+    <div>
+      <p class="eyebrow">{{ s.tech_eyebrow }}</p>
+      <h2>{{ s.tech.title|accent }}</h2>
+      <p class="lead">{{ s.tech.text }}</p>
+      <ul class="tech-points">{% for pt in s.tech.points %}<li class="reveal">{{ p.icon('check') }}{{ pt }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.before_after and 'results' not in hide %}
+<section class="sec" id="results">
+  <div class="wrap">
+    {{ p.section_head(s.results_eyebrow, s.results_title, '', 'center') }}
+    {{ p.slider(s.before_after) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.doctors and 'doctors' not in hide %}
+<section class="sec tint" id="doctors">
+  <div class="wrap">
+    {{ p.section_head(s.doctors_eyebrow, s.doctors_title) }}
+    {{ p.doctors(s.doctors, 'docs-arch') }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.reviews and 'reviews' not in hide %}
+<section class="sec" id="reviews">
+  <div class="wrap">
+    {{ p.section_head(s.reviews_eyebrow, s.reviews_title) }}
+    {{ p.reviews(s.reviews) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.articles and 'articles' not in hide %}
+<section class="sec tint" id="journal">
+  <div class="wrap">
+    {{ p.section_head(s.articles_eyebrow, s.articles_title) }}
+    <div class="articles">
+      {% for a in s.articles %}
+      <article class="article reveal">{{ p.photo(a.image, a.title, 'article-img', 'leaf') }}<h3>{{ a.title }}</h3><p>{{ a.text }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.faqs and 'faq' not in hide %}
+<section class="sec" id="faq">
+  <div class="wrap">
+    {{ p.section_head('', s.faq_title, '', 'center') }}
+    {{ p.faq(s.faqs) }}
+  </div>
+</section>
+{% endif %}
+
+<section class="sec tint" id="contact">
+  <div class="wrap">
+    {{ p.section_head(s.contact_eyebrow, s.contact_title) }}
+    {{ p.contact() }}
+  </div>
+</section>
+{% endblock %}

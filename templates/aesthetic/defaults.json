@@ -1,0 +1,71 @@
+{
+  "colors": {"primary": "#3a2f2c", "accent": "#b5707a", "ink": "#2a2321", "bg": "#faf6f2"},
+  "fonts": {
+    "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap",
+    "display": "'Cormorant Garamond',Georgia,serif",
+    "body": "'Jost',system-ui,sans-serif"
+  },
+  "meta_title": {"en": "{name} | Dermatology & aesthetic clinic in {city}", "ar": "{name} | عيادة الجلدية والتجميل في {city}"},
+  "meta_description": {
+    "en": "{name} offers medical-grade skin, laser and aesthetic treatments in {city}. Personalised plans from experienced specialists. Book a consultation.",
+    "ar": "تقدّم {name} علاجات الجلد والليزر والتجميل الطبي في {city} بخطط مخصّصة من أخصائيين ذوي خبرة. احجز استشارتك."
+  },
+  "eyebrow": {"en": "Dermatology & aesthetics · {city}", "ar": "الجلدية والتجميل · {city}"},
+  "hero_title": {"en": "Skin that feels *effortlessly* yours", "ar": "بشرة تشعر أنها *بلا عناء* لك"},
+  "hero_text": {
+    "en": "Medical-grade skin, laser and aesthetic care in {city}, tailored to you by specialists who value subtle, natural results.",
+    "ar": "رعاية طبية للبشرة والليزر والتجميل في {city}، مصمّمة لك على يد أخصائيين يؤمنون بالنتائج الطبيعية الهادئة."
+  },
+  "hero_secondary": {"en": "Explore treatments", "ar": "استكشف العلاجات"},
+  "ticker": {"en": ["Skin consultations", "Laser hair removal", "Acne & scars", "Pigmentation", "Anti-ageing", "Medical facials", "Skin boosters", "Chemical peels", "Hair restoration"],
+             "ar": ["استشارات الجلد", "إزالة الشعر بالليزر", "حب الشباب والندبات", "التصبغات", "مكافحة الشيخوخة", "العناية الطبية بالوجه", "معزّزات البشرة", "التقشير الكيميائي", "استعادة الشعر"]},
+  "intro_eyebrow": {"en": "Our philosophy", "ar": "فلسفتنا"},
+  "intro": {
+    "en": "We treat skin as a *craft*: diagnose first, then plan, then treat, so every result looks like you, only better rested.",
+    "ar": "نتعامل مع البشرة كـ*حِرفة*: نشخّص أولًا، ثم نخطّط، ثم نعالج، لتبدو كل نتيجة كأنها أنت، لكن بمظهر أكثر راحة."
+  },
+  "services_eyebrow": {"en": "Treatments", "ar": "العلاجات"},
+  "services_title": {"en": "Care for every *skin story*", "ar": "عناية لكل *قصة بشرة*"},
+  "services": [
+    {"icon": "face", "title": {"en": "Skin consultation", "ar": "استشارة الجلد"}, "text": {"en": "A detailed assessment of your skin, goals and lifestyle, ending in a clear plan.", "ar": "تقييم مفصّل لبشرتك وأهدافك ونمط حياتك ينتهي بخطة واضحة."}},
+    {"icon": "zap", "title": {"en": "Laser hair removal", "ar": "إزالة الشعر بالليزر"}, "text": {"en": "Comfortable, long-lasting reduction for all skin tones with medical-grade lasers.", "ar": "تقليل دائم ومريح للشعر لجميع أنواع البشرة بأجهزة ليزر طبية."}},
+    {"icon": "drop", "title": {"en": "Acne & scar treatment", "ar": "علاج حب الشباب والندبات"}, "text": {"en": "Targeted programmes that clear breakouts and soften scarring.", "ar": "برامج موجّهة تعالج الحبوب وتخفف الندبات."}},
+    {"icon": "sparkle", "title": {"en": "Pigmentation & melasma", "ar": "التصبغات والكلف"}, "text": {"en": "Even out tone safely with peels, lasers and tailored home care.", "ar": "توحيد لون البشرة بأمان عبر التقشير والليزر وعناية منزلية مخصّصة."}},
+    {"icon": "star", "title": {"en": "Anti-ageing", "ar": "مكافحة الشيخوخة"}, "text": {"en": "Botulinum toxin, fillers and skin tightening, always conservative and balanced.", "ar": "حقن البوتوكس والفيلر وشدّ البشرة بأسلوب متوازن ومحافظ."}},
+    {"icon": "leaf", "title": {"en": "Skin boosters & PRP", "ar": "معزّزات البشرة والبلازما"}, "text": {"en": "Hydration and regeneration treatments for a fresher, smoother complexion.", "ar": "علاجات ترطيب وتجديد لبشرة أكثر نضارة ونعومة."}},
+    {"icon": "layers", "title": {"en": "Chemical peels", "ar": "التقشير الكيميائي"}, "text": {"en": "Renew texture and radiance with peels matched to your skin's needs.", "ar": "تجديد الملمس والإشراق بتقشير يناسب احتياج بشرتك."}},
+    {"icon": "heart", "title": {"en": "Hair restoration", "ar": "استعادة الشعر"}, "text": {"en": "Diagnosis and therapies for thinning hair and hair loss.", "ar": "تشخيص وعلاجات لتساقط الشعر وخفّته."}}
+  ],
+  "journey_eyebrow": {"en": "Your journey", "ar": "رحلتك"},
+  "journey_title": {"en": "Four steps to *healthy skin*", "ar": "أربع خطوات نحو *بشرة صحية*"},
+  "journey": [
+    {"title": {"en": "Consultation", "ar": "الاستشارة"}, "text": {"en": "We listen, examine your skin and discuss goals and history.", "ar": "نصغي إليك ونفحص بشرتك ونناقش أهدافك وتاريخك."}},
+    {"title": {"en": "Personal plan", "ar": "خطة شخصية"}, "text": {"en": "A step-by-step plan with timing, expected results and costs.", "ar": "خطة مفصّلة بالمدة والنتائج المتوقعة والتكلفة."}},
+    {"title": {"en": "Treatment", "ar": "العلاج"}, "text": {"en": "Comfortable sessions with advanced devices and clear aftercare.", "ar": "جلسات مريحة بأجهزة متقدمة وإرشادات عناية واضحة."}},
+    {"title": {"en": "Follow-up", "ar": "المتابعة"}, "text": {"en": "We track progress and fine-tune your plan along the way.", "ar": "نتابع تقدّمك ونعدّل الخطة عند الحاجة."}}
+  ],
+  "tech_eyebrow": {"en": "Technology", "ar": "التقنيات"},
+  "tech": {
+    "title": {"en": "Powered by *advanced* systems", "ar": "مدعومة بأنظمة *متقدمة*"},
+    "text": {"en": "We invest in proven, clinically validated devices so treatments are effective, comfortable and safe for your skin type.", "ar": "نستثمر في أجهزة مثبتة سريريًا لتكون العلاجات فعّالة ومريحة وآمنة لنوع بشرتك."},
+    "points": {"en": ["Clinically validated devices", "Suitable for all skin tones", "Comfort-focused cooling", "Regularly serviced and calibrated"], "ar": ["أجهزة مثبتة سريريًا", "مناسبة لجميع درجات البشرة", "تبريد لراحة أكبر", "صيانة ومعايرة دورية"]}
+  },
+  "results_eyebrow": {"en": "Results", "ar": "النتائج"},
+  "results_title": {"en": "Transformations that *speak* for themselves", "ar": "نتائج *تتحدث* عن نفسها"},
+  "doctors_eyebrow": {"en": "Specialists", "ar": "الأخصائيون"},
+  "doctors_title": {"en": "Physicians who treat skin as a *craft*", "ar": "أطباء يتعاملون مع البشرة كـ*حِرفة*"},
+  "reviews_eyebrow": {"en": "Patient stories", "ar": "قصص المرضى"},
+  "reviews_title": {"en": "Stories of restored *confidence*", "ar": "قصص *ثقة* مستعادة"},
+  "articles_eyebrow": {"en": "Journal", "ar": "المدونة"},
+  "articles_title": {"en": "Skin *insights*", "ar": "معلومات عن *البشرة*"},
+  "faq_title": {"en": "Frequently asked *questions*", "ar": "الأسئلة *الشائعة*"},
+  "faqs": [
+    {"q": {"en": "Do I need a consultation first?", "ar": "هل أحتاج استشارة أولًا؟"}, "a": {"en": "Yes. A consultation lets us recommend what truly suits your skin and goals, and explain results, downtime and cost.", "ar": "نعم. تتيح الاستشارة أن نوصي بما يناسب بشرتك وأهدافك ونشرح النتائج وفترة التعافي والتكلفة."}},
+    {"q": {"en": "Are laser treatments safe for darker skin tones?", "ar": "هل علاجات الليزر آمنة للبشرة الداكنة؟"}, "a": {"en": "With the right device and settings, yes. We select technology suited to your skin tone and test where needed.", "ar": "نعم، مع الجهاز والإعدادات المناسبة. نختار التقنية الملائمة لبشرتك ونجري اختبارًا عند الحاجة."}},
+    {"q": {"en": "How many sessions will I need?", "ar": "كم جلسة سأحتاج؟"}, "a": {"en": "It depends on the treatment and your skin. We'll give you an estimate at your consultation.", "ar": "يعتمد ذلك على العلاج وبشرتك. سنعطيك تقديرًا خلال الاستشارة."}},
+    {"q": {"en": "Is there downtime?", "ar": "هل هناك فترة تعافٍ؟"}, "a": {"en": "Many treatments have little or none. We'll tell you what to expect and how to care for your skin afterwards.", "ar": "كثير من العلاجات لا تحتاج إلى فترة تعافٍ تُذكر. سنخبرك بما تتوقعه وكيف تعتني ببشرتك بعدها."}},
+    {"q": {"en": "How do I book?", "ar": "كيف أحجز؟"}, "a": {"en": "Use the form below, message us on WhatsApp or call, and we'll confirm a time.", "ar": "استخدم النموذج أدناه أو راسلنا على واتساب أو اتصل بنا وسنؤكد الموعد."}}
+  ],
+  "contact_eyebrow": {"en": "Visit us", "ar": "زورونا"},
+  "contact_title": {"en": "Begin with a *conversation*", "ar": "ابدأ بـ*حديث*"}
+}

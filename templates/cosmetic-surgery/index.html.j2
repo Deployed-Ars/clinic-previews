@@ -1,0 +1,151 @@
+{% extends 'layout.html.j2' %}
+{% import 'parts.j2' as p with context %}
+{% set c = s.contact or {} %}
+{% set flat = [] %}
+{% for g in (s.procedures or []) %}{% for t in g['treatments'] %}{% set _ = flat.append(t) %}{% endfor %}{% endfor %}
+{% if flat and not s.services %}{% set _ = s.update({'services': flat}) %}{% endif %}
+{% set nav = [
+  ('procedures', ui.nav_procedures, s.procedures),
+  ('journey', ui.nav_journey, s.journey),
+  ('safety', ui.nav_safety, s.safety),
+  ('surgeons', ui.nav_surgeons, s.doctors),
+  ('results', ui.nav_results, s.before_after),
+  ('reviews', ui.nav_reviews, s.reviews),
+  ('faq', ui.nav_faq, s.faqs),
+  ('contact', ui.nav_contact, true)
+] %}
+
+{% block main %}
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ s.eyebrow }}</p>
+      <h1>{{ s.hero_title|accent }}</h1>
+      <p class="hero-text">{{ s.hero_text }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-accent" href="#contact">{{ ui.book_consult }}</a>
+        {% if c.phone %}<a class="btn btn-ghost" href="tel:{{ c.phone|digits }}" dir="ltr">{{ p.icon('phone') }} {{ c.phone }}</a>{% endif %}
+      </div>
+      <ul class="assure">{% for a in s.assurances %}<li>{{ p.icon('check') }}{{ a }}</li>{% endfor %}</ul>
+    </div>
+    <div class="hero-art">
+      <div class="frame">{{ p.photo(s.images.hero if s.images else '', s.name, 'frame-img', 'sparkle') }}</div>
+      {% if s.rating %}<div class="badge"><b>{{ s.rating }}</b>{{ p.stars(s.rating) }}<span>{% if s.review_count %}{{ s.review_count }} {{ ui.reviews_word }}{% endif %}</span></div>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="sec intro">
+  <div class="wrap narrow">
+    <p class="eyebrow center">{{ s.intro_eyebrow }}</p>
+    <p class="intro-text reveal">{{ s.intro|accent }}</p>
+    {% if s.stats %}{{ p.stats(s.stats, 'stats-row') }}{% endif %}
+  </div>
+</section>
+
+{% if s.offer and s.offer.text %}
+<section class="offer"><div class="wrap offer-in">
+  <span class="tag">{{ ui.offer_label }}</span><p>{{ s.offer.text }}</p>
+  {% if s.offer.until %}<small>{{ ui.valid_until }} {{ s.offer.until }}</small>{% endif %}
+</div></section>
+{% endif %}
+
+{% if s.procedures and 'procedures' not in hide %}
+<section class="sec cream" id="procedures">
+  <div class="wrap">
+    {{ p.section_head(s.procedures_eyebrow, s.procedures_title) }}
+    <div data-tabs>
+      <div class="tabs" role="tablist">
+        {% for g in s.procedures %}<button class="tab" type="button" role="tab" id="tab-{{ loop.index }}" aria-controls="panel-{{ loop.index }}">{{ g.name }}</button>{% endfor %}
+      </div>
+      {% for g in s.procedures %}
+      <div class="tabpanel" role="tabpanel" id="panel-{{ loop.index }}" aria-labelledby="tab-{{ loop.index }}">
+        <div class="proc-grid">
+          {% for t in g['treatments'] %}
+          <a class="proc" href="#contact">
+            <span class="proc-n">{{ '%02d' % loop.index }}</span>
+            <h3>{{ t.title }}</h3>
+            <p>{{ t.text }}</p>
+            <span class="proc-go">{{ ui.book_consult }} {{ p.icon('arrow') }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.journey and 'journey' not in hide %}
+<section class="sec" id="journey">
+  <div class="wrap">
+    {{ p.section_head(s.journey_eyebrow, s.journey_title, '', 'center') }}
+    {{ p.journey(s.journey, 'journey-rail') }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.safety and 'safety' not in hide %}
+<section class="sec night" id="safety">
+  <div class="wrap safety-grid">
+    <div>
+      <p class="eyebrow">{{ s.safety_eyebrow }}</p>
+      <h2>{{ s.safety.title|accent }}</h2>
+      <p class="lead">{{ s.safety.text }}</p>
+    </div>
+    <ul class="safety-points">{% for pt in s.safety.points %}<li class="reveal">{{ p.icon('shield') }}<span>{{ pt }}</span></li>{% endfor %}</ul>
+  </div>
+</section>
+{% endif %}
+
+{% if s.doctors and 'surgeons' not in hide %}
+<section class="sec" id="surgeons">
+  <div class="wrap">
+    {{ p.section_head(s.doctors_eyebrow, s.doctors_title) }}
+    {{ p.doctors(s.doctors, 'docs-luxe') }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.before_after and 'results' not in hide %}
+<section class="sec cream" id="results">
+  <div class="wrap">
+    {{ p.section_head(s.results_eyebrow, s.results_title, '', 'center') }}
+    {{ p.slider(s.before_after) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.financing and 'financing' not in hide %}
+<section class="sec slim"><div class="wrap">
+  <p class="eyebrow center">{{ s.financing_title }}</p>
+  <ul class="pills">{% for i in s.financing %}<li>{{ i }}</li>{% endfor %}</ul>
+</div></section>
+{% endif %}
+
+{% if s.reviews and 'reviews' not in hide %}
+<section class="sec cream" id="reviews">
+  <div class="wrap">
+    {{ p.section_head(s.reviews_eyebrow, s.reviews_title) }}
+    {{ p.reviews(s.reviews) }}
+  </div>
+</section>
+{% endif %}
+
+{% if s.faqs and 'faq' not in hide %}
+<section class="sec" id="faq">
+  <div class="wrap">
+    {{ p.section_head('', s.faq_title, '', 'center') }}
+    {{ p.faq(s.faqs) }}
+  </div>
+</section>
+{% endif %}
+
+<section class="sec night" id="contact">
+  <div class="wrap">
+    {{ p.section_head(s.contact_eyebrow, s.contact_title) }}
+    {{ p.contact() }}
+  </div>
+</section>
+{% endblock %}

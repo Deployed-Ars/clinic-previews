@@ -1,0 +1,76 @@
+{
+  "colors": {"primary": "#0a6c8c", "accent": "#ff8a5c", "ink": "#10242e", "bg": "#fbfdfe"},
+  "fonts": {
+    "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
+    "display": "'Plus Jakarta Sans',sans-serif",
+    "body": "'Plus Jakarta Sans',sans-serif"
+  },
+  "meta_title": {"en": "{name} | Dental clinic in {city}", "ar": "{name} | عيادة أسنان في {city}"},
+  "meta_description": {
+    "en": "{name} is a modern dental clinic in {city}: check-ups, whitening, implants, braces and smile design. Book your visit today.",
+    "ar": "{name} عيادة أسنان حديثة في {city}: فحوصات، تبييض، زراعة، تقويم وتصميم الابتسامة. احجز زيارتك اليوم."
+  },
+  "eyebrow": {"en": "Dental clinic · {city}", "ar": "عيادة أسنان · {city}"},
+  "hero_title": {"en": "Healthy smiles, *gently* cared for", "ar": "ابتسامات صحية برعاية *لطيفة*"},
+  "hero_text": {
+    "en": "Modern dentistry in {city} with a calm, friendly team: from routine check-ups to complete smile makeovers.",
+    "ar": "طب أسنان عصري في {city} مع فريق هادئ وودود: من الفحوصات الدورية إلى تجميل الابتسامة بالكامل."
+  },
+  "highlights": {
+    "en": ["Gentle, patient-first care", "Clear treatment plans and pricing", "Modern digital equipment"],
+    "ar": ["رعاية لطيفة تضع المريض أولًا", "خطط علاج وأسعار واضحة", "معدات رقمية حديثة"]
+  },
+  "services_eyebrow": {"en": "Treatments", "ar": "العلاجات"},
+  "services_title": {"en": "Everything for your *smile*, under one roof", "ar": "كل ما تحتاجه *لابتسامتك* تحت سقف واحد"},
+  "services": [
+    {"icon": "tooth", "title": {"en": "Check-ups & cleaning", "ar": "الفحص والتنظيف"}, "text": {"en": "Thorough exams, scaling and polishing to keep gums and teeth healthy.", "ar": "فحص شامل وإزالة الجير والتلميع للحفاظ على صحة اللثة والأسنان."}},
+    {"icon": "sparkle", "title": {"en": "Teeth whitening", "ar": "تبييض الأسنان"}, "text": {"en": "Safe, professional whitening for a visibly brighter smile.", "ar": "تبييض احترافي وآمن لابتسامة أكثر إشراقًا."}},
+    {"icon": "layers", "title": {"en": "Dental implants", "ar": "زراعة الأسنان"}, "text": {"en": "Permanent, natural-looking replacements for missing teeth.", "ar": "حلول دائمة وطبيعية المظهر للأسنان المفقودة."}},
+    {"icon": "smile", "title": {"en": "Braces & clear aligners", "ar": "التقويم والمقوّمات الشفافة"}, "text": {"en": "Straighter teeth with discreet, comfortable options for teens and adults.", "ar": "أسنان أكثر انتظامًا بخيارات مريحة وغير ملحوظة للمراهقين والبالغين."}},
+    {"icon": "star", "title": {"en": "Veneers & smile design", "ar": "القشور وتصميم الابتسامة"}, "text": {"en": "Custom-crafted veneers and cosmetic work planned around your face.", "ar": "قشور وأعمال تجميلية مصممة خصيصًا لتناسب ملامحك."}},
+    {"icon": "shield", "title": {"en": "Root canal treatment", "ar": "علاج الجذور"}, "text": {"en": "Comfortable treatment that relieves pain and saves your natural tooth.", "ar": "علاج مريح يزيل الألم ويحافظ على سنّك الطبيعي."}},
+    {"icon": "baby", "title": {"en": "Children's dentistry", "ar": "أسنان الأطفال"}, "text": {"en": "A friendly first-visit experience that builds lifelong healthy habits.", "ar": "تجربة زيارة أولى ودودة تبني عادات صحية تدوم مدى الحياة."}},
+    {"icon": "alert", "title": {"en": "Emergency care", "ar": "الحالات الطارئة"}, "text": {"en": "Prompt help for toothache, broken teeth and dental injuries.", "ar": "مساعدة سريعة لألم الأسنان وكسورها وإصاباتها."}}
+  ],
+  "why_eyebrow": {"en": "Why choose us", "ar": "لماذا نحن"},
+  "why_title": {"en": "Dentistry that feels *different*", "ar": "طب أسنان بتجربة *مختلفة*"},
+  "why": [
+    {"icon": "heart", "title": {"en": "Gentle approach", "ar": "أسلوب لطيف"}, "text": {"en": "We explain every step and go at your pace.", "ar": "نشرح كل خطوة ونسير بوتيرتك."}},
+    {"icon": "scan", "title": {"en": "Digital diagnostics", "ar": "تشخيص رقمي"}, "text": {"en": "Digital X-rays and scans for accurate, faster planning.", "ar": "أشعة ومسح رقمي لتخطيط أدق وأسرع."}},
+    {"icon": "check", "title": {"en": "Clear plans", "ar": "خطط واضحة"}, "text": {"en": "A written plan and cost before any treatment begins.", "ar": "خطة وتكلفة مكتوبة قبل بدء أي علاج."}},
+    {"icon": "shield", "title": {"en": "Strict hygiene", "ar": "تعقيم صارم"}, "text": {"en": "Sterilisation protocols you can see and trust.", "ar": "بروتوكولات تعقيم تراها وتثق بها."}},
+    {"icon": "clock", "title": {"en": "Convenient hours", "ar": "مواعيد مريحة"}, "text": {"en": "Appointments that fit around work and family.", "ar": "مواعيد تناسب عملك وعائلتك."}},
+    {"icon": "user", "title": {"en": "Whole-family care", "ar": "رعاية للعائلة"}, "text": {"en": "From toddlers to grandparents, all in one place.", "ar": "من الأطفال إلى كبار السن في مكان واحد."}}
+  ],
+  "journey_eyebrow": {"en": "Your visit", "ar": "زيارتك"},
+  "journey_title": {"en": "What to expect at your *first visit*", "ar": "ماذا تتوقع في *زيارتك الأولى*"},
+  "journey": [
+    {"title": {"en": "Book", "ar": "احجز"}, "text": {"en": "Call, message us on WhatsApp or use the form below.", "ar": "اتصل أو راسلنا عبر واتساب أو استخدم النموذج أدناه."}},
+    {"title": {"en": "Examine", "ar": "افحص"}, "text": {"en": "A thorough check-up with digital X-rays where needed.", "ar": "فحص شامل مع أشعة رقمية عند الحاجة."}},
+    {"title": {"en": "Plan", "ar": "خطّط"}, "text": {"en": "We walk you through options, timing and cost.", "ar": "نشرح لك الخيارات والمدة والتكلفة."}},
+    {"title": {"en": "Smile", "ar": "ابتسم"}, "text": {"en": "Comfortable treatment and a follow-up schedule that suits you.", "ar": "علاج مريح وجدول متابعة يناسبك."}}
+  ],
+  "results_eyebrow": {"en": "Smile results", "ar": "نتائج الابتسامة"},
+  "results_title": {"en": "See the *difference*", "ar": "شاهد *الفرق*"},
+  "tech_eyebrow": {"en": "Technology", "ar": "التقنيات"},
+  "tech": {
+    "title": {"en": "Modern tools for *precise*, comfortable care", "ar": "أدوات حديثة لرعاية *دقيقة* ومريحة"},
+    "text": {"en": "Technology helps us diagnose earlier, plan better and make treatment quicker and more comfortable.", "ar": "تساعدنا التقنية على التشخيص المبكر والتخطيط الأفضل وجعل العلاج أسرع وأكثر راحة."},
+    "points": {"en": ["Digital X-rays", "3D intraoral scanning", "Smile design previews", "Painless anaesthesia techniques"], "ar": ["أشعة رقمية", "مسح ثلاثي الأبعاد للفم", "معاينة تصميم الابتسامة", "تقنيات تخدير بلا ألم"]}
+  },
+  "doctors_eyebrow": {"en": "Our dentists", "ar": "أطباؤنا"},
+  "doctors_title": {"en": "Meet the *team*", "ar": "تعرّف على *الفريق*"},
+  "reviews_eyebrow": {"en": "Patient reviews", "ar": "آراء المرضى"},
+  "reviews_title": {"en": "Smiles we're *proud* of", "ar": "ابتسامات *نفخر* بها"},
+  "faq_title": {"en": "Questions, *answered*", "ar": "أسئلتكم، *بإجاباتها*"},
+  "faqs": [
+    {"q": {"en": "How often should I visit the dentist?", "ar": "كم مرة يجب أن أزور طبيب الأسنان؟"}, "a": {"en": "Most people benefit from a check-up and clean every six months. We'll recommend a schedule based on your oral health.", "ar": "يستفيد معظم الناس من فحص وتنظيف كل ستة أشهر. سنوصي بجدول يناسب صحة فمك."}},
+    {"q": {"en": "Is teeth whitening safe?", "ar": "هل تبييض الأسنان آمن؟"}, "a": {"en": "Professional whitening is safe when done after an exam. We check your gums and enamel first.", "ar": "التبييض الاحترافي آمن بعد الفحص. نتحقق من اللثة والمينا أولًا."}},
+    {"q": {"en": "Does treatment hurt?", "ar": "هل العلاج مؤلم؟"}, "a": {"en": "We use modern anaesthesia and gentle techniques so you stay comfortable. Tell us if you feel anxious and we'll go slowly.", "ar": "نستخدم تخديرًا حديثًا وتقنيات لطيفة لتبقى مرتاحًا. أخبرنا إن شعرت بالقلق وسنتمهل."}},
+    {"q": {"en": "How long do dental implants take?", "ar": "كم تستغرق زراعة الأسنان؟"}, "a": {"en": "It depends on your bone health and the plan, often a few months from placement to the final crown. We'll give you a clear timeline.", "ar": "يعتمد ذلك على صحة العظم والخطة، وغالبًا عدة أشهر حتى التاج النهائي. سنقدّم لك جدولًا واضحًا."}},
+    {"q": {"en": "Do you treat children?", "ar": "هل تعالجون الأطفال؟"}, "a": {"en": "Yes. We welcome children and aim to make the first visit relaxed and fun.", "ar": "نعم، نرحّب بالأطفال ونجعل الزيارة الأولى مريحة وممتعة."}},
+    {"q": {"en": "How do I book?", "ar": "كيف أحجز موعدًا؟"}, "a": {"en": "Call us, send a WhatsApp message or use the request form on this page and we'll confirm a time.", "ar": "اتصل بنا أو راسلنا على واتساب أو استخدم نموذج الطلب في هذه الصفحة وسنؤكد الموعد."}}
+  ],
+  "contact_eyebrow": {"en": "Visit us", "ar": "زورونا"},
+  "contact_title": {"en": "Ready for a *healthier* smile?", "ar": "جاهز لابتسامة *أكثر صحة*؟"}
+}
